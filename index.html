@@ -3,110 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agricultural Science Department - Ambassador Login Portal</title>
+    <title>Agricultural science Department </title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-image: url('hz.jpg');
-            background-size: cover;
-            color: #333;
-            margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
-            position: relative;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            width: 90%;
-            max-width: 800px;
-            display: flex;
-            flex-direction: column;
             align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
         }
-        h1, h2 {
-            color: #2c3e50;
+        .maintenance-message {
             text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
         }
-        img.logo {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 100px;
+        h1 {
+            color: #d9534f;
         }
-        .input-container {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            margin-bottom: 20px;
+        p {
+            font-size: 18px;
+            color: #555;
         }
-        input {
-            flex-grow: 1;
-            margin-right: 10px;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .reason {
             font-size: 16px;
+            color: #999;
+            margin-top: 20px;
         }
-        button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+        .countdown {
+            font-size: 20px;
+            color: #5bc0de;
+            font-weight: bold;
+            margin-top: 20px;
         }
-        button:hover {
-            background-color: #2980b9;
-            transform: scale(1.05);
+        .spinner {
+            margin-top: 20px;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #d9534f;
+            animation: spin 1s linear infinite;
         }
-        .ads-container {
-            display: none; /* This will hide the entire ads section */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <img src="images.png" alt="University Logo" class="logo">
-    <div class="container">
-        <h1>Agricultural Science Department</h1>
-        <h2>Ambassador Login Portal</h2>
-        <div class="input-container">
-            <input type="text" id="userId" placeholder="Enter your User ID" required>
-            <input type="password" id="password" placeholder="Enter your Password" required>
-            <button id="loginButton">Login</button>
+    <div class="maintenance-message">
+        <h1>We Are Currently Under Maintenance</h1>
+        <p>Our website is undergoing some important updates to improve your experience. We are working hard to bring everything back online as soon as possible.</p>
+        
+        <div class="reason">
+            <p><strong>Reason for Maintenance:</strong> We're upgrading our systems and enhancing security to serve you better.</p>
         </div>
+    
+
+        <div class="spinner"></div>
+
+        <p>Thank you for your patience. We apologize for any inconvenience caused.</p>
     </div>
-
-    <script>
-        if (sessionStorage.getItem('loggedIn')) {
-            window.location.href = 'capturePhoto.html';
-        }
-
-        document.getElementById('loginButton').addEventListener('click', () => {
-            const userId = document.getElementById('userId').value;
-            const password = document.getElementById('password').value;
-
-            // Validate user ID and password
-            if (!userId || password !== 'LKumar212') {
-                alert("Invalid User ID or Password.");
-                return;
-            }
-
-            // Set login flag
-            sessionStorage.setItem('loggedIn', 'true');
-
-            // Redirect to photo capture page
-            window.location.href = 'capturePhoto.html';
-        });
-    </script>
-
 </body>
 </html>
